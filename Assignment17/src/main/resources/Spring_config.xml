@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="passport" class="com.springFrame.Assignment17.EmployeePassport.Passport">
+        <property name="passNum" value="09090909" />
+        <property name="dateOfIssue" value="#{T(java.time.LocalDate).now()}" />
+    </bean>
+
+    <bean id="employee" class="com.springFrame.Assignment17.EmployeePassport.Employee">
+        <property name="empId" value="1" />
+        <property name="empName" value="Abisheak" />
+        <property name="passObj" ref="passport" />
+    </bean>
+
+</beans>
